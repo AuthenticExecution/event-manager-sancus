@@ -13,7 +13,7 @@ pull:
 	docker pull $(REPO):$(TAG)
 
 run: check_port check_device
-	docker run -it -p $(PORT):$(PORT) -e PORT=$(PORT) -e DEVICE=$(DEVICE) -e UART_DEVICE=$(UART_DEVICE) --device=$(DEVICE) --device=$(UART_DEVICE) --rm --name event-manager-$(PORT) $(REPO):$(TAG)
+	docker run -it -p $(PORT):$(PORT) -e PORT=$(PORT) --device=$(DEVICE):/dev/RIOT --device=$(UART_DEVICE):/dev/UART --rm --name event-manager-$(PORT) $(REPO):$(TAG)
 
 login:
 	docker login

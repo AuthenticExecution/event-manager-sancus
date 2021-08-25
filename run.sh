@@ -3,12 +3,12 @@
 set -e
 
 test $PORT
-test $DEVICE
-test $UART_DEVICE
+DEVICE=/dev/RIOT
+UART_DEVICE=/dev/UART
 
 LOG_FILE=sancus.log
 
-echo DEV: $DEVICE UART: $UART_DEVICE PORT: $PORT
+echo PORT: $PORT
 rm -f $LOG_FILE
 
 reactive-uart2ip -l error -p $PORT -d $UART_DEVICE &
