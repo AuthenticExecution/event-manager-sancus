@@ -1,7 +1,7 @@
 REPO		?= gianlu33/event-manager-sancus
 TAG			?= latest
 
-DEVICE_NET ?= $(shell echo $(DEVICE) | perl -pe 's/(\d+)(?!.*\d+)/$$1+1/e')
+UART_DEVICE ?= $(shell echo $(DEVICE) | perl -pe 's/(\d+)(?!.*\d+)/$$1+1/e')
 
 build:
 	docker build -t $(REPO):$(TAG) .
@@ -13,7 +13,7 @@ pull:
 	docker pull $(REPO):$(TAG)
 
 run: check_port check_device
-	docker run -it -p $(PORT):$(PORT) -e PORT=$(PORT) -e DEVICE=$(DEVICE) --device=$(DEVICE) --device=$(DEVICE_NET) --rm --name event-manager-$(PORT) $(REPO):$(TAG)
+	docker run -it -p $(PORT):$(PORT) -e PORT=$(PORT) -e DEVICE=$(DEVICE) -e UART_DEVICE=$(UART_DEVICE) --device=$(DEVICE) --device=$(UART_DEVICE) --rm --name event-manager-$(PORT) $(REPO):$(TAG)
 
 login:
 	docker login
