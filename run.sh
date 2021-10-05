@@ -3,6 +3,7 @@
 set -e
 
 test $PORT
+test $ELF
 DEVICE=/dev/RIOT
 UART_DEVICE=/dev/UART
 
@@ -12,7 +13,7 @@ echo PORT: $PORT
 rm -f $LOG_FILE
 
 reactive-uart2ip -l error -p $PORT -d $UART_DEVICE &
-sancus-loader -device $DEVICE reactive.elf
+sancus-loader -device $DEVICE $ELF
 screen -L -Logfile $LOG_FILE -dmS sancus $DEVICE 57600
 
 echo "Binary loaded successfully. Printing logs"

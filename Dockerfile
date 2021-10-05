@@ -27,7 +27,9 @@ RUN git clone --depth 1 https://github.com/AuthenticExecution/reactive-uart2ip.g
 # Fetch the event manager binary
 
 RUN git clone --depth 1 https://github.com/AuthenticExecution/env.git \
-    && mv env/sancus/reactive.elf . \
+    && mv env/sancus/reactive.elf reactive.elf \
+    && mv env/sancus/reactive_debug.elf reactive_debug.elf \
+    && mv env/sancus/reactive_led.elf reactive_led.elf \
     && rm -rf env
 
 # Run
