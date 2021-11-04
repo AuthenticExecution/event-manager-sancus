@@ -1,5 +1,5 @@
-REPO		    ?= gianlu33/event-manager-sancus
-TAG			    ?= latest
+REPO          ?= authexec/event-manager-sancus
+TAG           ?= latest
 
 UART_DEVICE ?= $(shell echo $(DEVICE) | perl -pe 's/(\d+)(?!.*\d+)/$$1+1/e')
 ELF         ?= reactive_led.elf
@@ -18,10 +18,6 @@ run: check_port check_device
 
 login:
 	docker login
-
-clean:
-	docker rm $(shell docker ps -a -q) 2> /dev/null || true
-	docker image prune -f
 
 check_port:
 	@test $(PORT) || (echo "PORT variable not defined. Run make <target> PORT=<port>" && return 1)
