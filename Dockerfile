@@ -18,15 +18,15 @@ RUN git clone --depth 1 https://github.com/sancus-tee/sancus-core.git \
     && mv sancus-core/tools tools \
     && rm -rf sancus-core
 
-# Install reactive-uart2ip
+# Install latest reactive-uart2ip
 
-RUN git clone --depth 1 https://github.com/AuthenticExecution/reactive-uart2ip.git \
-    && pip install reactive-uart2ip/ \
-    && rm -rf reactive-uart2ip
+RUN pip install reactive-uart2ip
 
 # copy the applications
+
 COPY app/ .
 
 # Run
+
 COPY run.sh .
 CMD ["./run.sh"]

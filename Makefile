@@ -2,7 +2,7 @@ REPO          ?= authexec/event-manager-sancus
 TAG           ?= latest
 
 UART_DEVICE ?= $(shell echo $(DEVICE) | perl -pe 's/(\d+)(?!.*\d+)/$$1+1/e')
-ELF         ?= reactive_led.elf
+ELF         ?= reactive.elf
 
 build:
 	docker build -t $(REPO):$(TAG) .
