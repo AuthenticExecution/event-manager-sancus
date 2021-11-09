@@ -18,7 +18,7 @@ Docker image to deploy the Sancus Event Manager
 - `reactive.elf` is the latest Reactive application, with no MMIO SMs
 - `reactive_debug.elf` is the same, but with debug outputs
 - `reactive_led.elf` is the latest Reactive application, using Secure I/O on an LED
-    - `led_driver` module key: `0f09b44ea918da07b67ed516d686c613`
+    - `led_driver` module key: `92d858483a8c4a5ee6fd7dbf10e84e96`
 
 ### Useful commands (not needed if you run the Docker image)
 - Load application: `sancus-loader -device <device> <elf_file>`
