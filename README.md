@@ -9,14 +9,9 @@ The EM is not maintained anymore, as it was developed for an outdated version of
 
 ### Flash the correct image on a Sancus node
 
-We provide two images in this repository, one using 64 bytes of security and the other 128. The latter should be used within the Authentic Execution framework.
-
 [How to flash a Sancus image](https://github.com/sancus-tee/sancus-main#xstools-installation).
 
-- `sancus64.mcs` is the Sancus image with 64 bits of security
-    - Node key: `deadbeefcafebabe`
-    - Vendor key (if ID is 0x1234 (4660)):  `4078d505d82099ba`
-- `sancus128.mcs` is the Sancus image with 128 bits of security
+- `2022-03_sancus-128-8mhz.mcs` is the Sancus image with 128 bits of security, running at 8MHz
     - Node key: `deadbeefcafebabec0defeeddefec8ed`
     - Vendor key (if ID == 0x1234 (4660)): `0b7bf3ae40880a8be430d0da34fb76f0`
 
