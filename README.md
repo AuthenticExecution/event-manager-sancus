@@ -23,7 +23,7 @@ The docker image takes care to automatically upload the EM application on the Sa
     - `reactive.elf` is the latest event manager, with no embedded SMs.
     - `reactive_debug.elf` is the same application, but with more verbose prints so it can be used for debugging purposes
     - `reactive_led.elf` also embeds two SMs (`pmodled` and `led_driver`) for establishing Secure I/O on an LED connected to the Sancus node
-        - `led_driver` module key: `92d858483a8c4a5ee6fd7dbf10e84e96` (with the default node and vendor keys)
+        - `led_driver` module key: `757ac7bccbb32738ad49d90ac0859f6c` (with the default node and vendor keys)
 
 ## Useful commands
 
