@@ -15,7 +15,7 @@ rm -f $LOG_FILE
 reactive-uart2ip -l error -p $PORT -d $UART_DEVICE &
 sancus-loader -device $DEVICE $ELF
 screen -L -Logfile $LOG_FILE -dmS sancus $DEVICE 57600
-screen -r sancus -X colon "logfile flush 0.1^M"
+screen -r sancus -X colon "logfile flush 0.001^M"
 
 echo "Binary loaded successfully. Printing logs"
 sleep 1
